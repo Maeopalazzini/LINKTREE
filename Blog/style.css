@@ -105,6 +105,7 @@ Variables (Opcional pero recomendado - copiado de tus archivos)
 .hero-content {
     background-color: rgba(0, 0, 0, 0.4); 
     padding: 24px 56px;
+    background-image: url(FOTOS/tacos.jpg);
 }
 
 .hero-content h1 {
