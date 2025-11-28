@@ -1,95 +1,125 @@
 /* Reseteo básico y fuente principal */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+:root {
+            --bg-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Azul Tech */
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+            --text-color: #ffffff;
+            --btn-bg: #ffffff;
+            --btn-text: #1e3c72;
+            --btn-hover: #f0f0f0;
+        }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    /* Color de fondo degradado (como muchos Linktrees) */
-    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 50%, #FF99AC 100%);
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px; /* Espacio para que no se pegue en móviles */
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* 1. Contenedor Principal (La "tarjeta") */
-.perfil-container {
-    max-width: 500px; /* Ancho máximo en escritorio */
-    width: 100%;       /* Ocupa el 90-100% en móviles */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    padding: 30px;
-    text-align: center; /* Centra la foto y el texto */
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            padding: 20px;
+        }
 
-/* 2. Imagen de Perfil */
-.perfil-foto {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* La hace redonda */
-    object-fit: cover; /* Evita que la foto se deforme */
-    border: 4px solid white;
-    margin-bottom: 15px;
-}
+        /* --- CONTENEDOR PRINCIPAL (TARJETA) --- */
+        .perfil-container {
+            width: 100%;
+            max-width: 400px; /* Ancho típico de celular */
+            text-align: center;
+            padding: 2rem;
+            /* Efecto Glassmorphism */
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            animation: fadeIn 1s ease-in-out;
+        }
 
-/* 3. Título y Descripción */
-.perfil-titulo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2c2c2c;
-}
+        /* --- IMAGEN DE PERFIL --- */
+        .perfil-img-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
-.perfil-descripcion {
-    font-size: 1rem;
-    color: #555;
-    margin-top: 10px;
-}
+        .perfil-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-/* 4. Lista de Enlaces (Botones) */
-.lista-enlaces {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column; /* Apila los botones verticalmente */
-    gap: 15px; /* Espacio entre los botones */
-}
+        /* --- TEXTOS --- */
+        .perfil-titulo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
 
-.enlace-boton {
-    /* Diseño del botón */
-    display: block; /* Hace que el enlace ocupe todo el ancho */
-    background-color: #D32F2F; /* Usamos el rojo de tu CSS anterior */
-    color: white;
-    text-decoration: none;
-    padding: 18px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    
-    /* Animación suave */
-    transition: all 0.3s ease;
-}
+        .perfil-descripcion {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
 
-/* Efecto al pasar el mouse (hover) */
-.enlace-boton:hover {
-    background-color: #4A4A4A; /* Color secundario */
-    transform: scale(1.03); /* Lo agranda ligeramente */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        /* --- BOTONES --- */
+        .lista-enlaces {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-/* Colores personalizados (Opcional) */
-.boton-tiktok  { background-color: #000000; }
-.boton-youtube { background-color: #FF0000; }
-.boton-tienda  { background-color: #34A853; }
-.boton-web     { background-color: #4285F4; }
+        .enlace-boton {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centrar contenido */
+            position: relative;
+            padding: 15px 20px;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            border-radius: 50px; /* Bordes totalmente redondos */
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-/* 5. Footer */
-.footer {
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #777;
-}
+        /* Icono dentro del botón */
+        .enlace-boton i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Efecto Hover */
+        .enlace-boton:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 7px 14px rgba(0,0,0,0.2);
+            background-color: var(--btn-hover);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
