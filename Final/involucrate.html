@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Involúcrate - Raíces Nativas Argentina</title>
+  <link rel="icon" type="image/x-icon" href="imagenes/logo.ico">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+
+  <meta name="description" content="Sumate al cambio con Raíces Nativas. Inscribite como voluntario para plantaciones, hacé una donación segura o difundí nuestra misión. Tu aporte recupera el bosque urbano.">
+  <meta name="keywords" content="ser voluntario ambiental, donar ong argentina, plantar árboles voluntariado, responsabilidad social empresarial, ayuda medio ambiente buenos aires">
+
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <div class="header-content">
+        <div class="header-info">
+          <a href="mailto:contacto@raicesnativas.org">📧 contacto@raicesnativas.org</a>
+          <a href="tel:+5491123456789">📞 +54 9 11 2345-6789</a>
+        </div>
+        <div class="header-info">
+          <a href="contacto.html#mapa">🌍 Buenos Aires, Argentina</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="header-main">
+      <nav class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="imagenes/logo.png" alt="Logotipo Raíces Nativas" class="logo-img">
+          <span>Raíces Nativas</span>
+        </a>
+        
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span>☰</span>
+        </button>
+        
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="involucrate.html">Involúcrate</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="involucrate.html#donaciones" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">Donar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="min-height: 400px;">
+    <div class="hero-content">
+      <h1 class="hero-title">Sumate al Cambio</h1>
+      <p class="hero-subtitle">
+        Hay muchas formas de ayudar: doná, voluntariate o difundí nuestro trabajo
+      </p>
+    </div>
+  </section>
+
+  <!-- FORMAS DE AYUDAR -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">💚</div>
+            <h3 class="card-title">Donar</h3>
+            <p class="card-description">
+              Tu aporte económico nos permite comprar árboles, herramientas y 
+              financiar nuestros proyectos de restauración.
+            </p>
+            <a href="#donaciones" class="btn btn-primary" style="margin-top: 1rem;">Quiero Donar</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🙌</div>
+            <h3 class="card-title">Voluntariado</h3>
+            <p class="card-description">
+              Unite a nuestras jornadas de plantación, mantenimiento y actividades 
+              educativas. No se necesita experiencia previa.
+            </p>
+            <a href="#voluntariado" class="btn btn-secondary" style="margin-top: 1rem;">Ser Voluntario</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">📱</div>
+            <h3 class="card-title">Difundir</h3>
+            <p class="card-description">
+              Compartí nuestras publicaciones en redes sociales y ayudanos a 
+              llegar a más personas comprometidas con el ambiente.
+            </p>
+            <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Compartir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONACIONES -->
+  <section class="section" id="donaciones" style="background: var(--blanco-hueso);">
+    <div class="container">
+      <h2 class="section-title">Doná Ahora</h2>
+      <p class="section-subtitle">
+        Cada peso cuenta para restaurar nuestros espacios verdes
+      </p>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-content">
+            <h3 style="color: var(--verde-bosque); margin-bottom: 2rem; text-align: center;">
+              Elegí el monto de tu donación
+            </h3>
+
+
+
+            <form id="donation-form">
+              <div class="form-group">
+                <label class="form-label">Ingresá el monto</label>
+                <input type="number" class="form-input" placeholder="$" min="100" step="100">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Tipo de donación</label>
+                <select class="form-select" required>
+                  <option value="">Seleccionar...</option>
+                  <option value="unica">Donación Única</option>
+                  <option value="mensual">Donación Mensual</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Nombre completo</label>
+                <input type="text" class="form-input" placeholder="Juan Pérez" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="tu@email.com" required>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="newsletter" checked>
+                <label for="newsletter">Quiero recibir novedades por email</label>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="anonimo">
+                <label for="anonimo">Quiero que mi donación sea anónima</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 1rem;">
+                Confirmar Donación
+              </button>
+            </form>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--blanco-hueso); border-radius: 10px; text-align: center;">
+              <p style="font-size: 0.95rem; color: var(--marron-tierra);">
+                🔒 Todas las transacciones son seguras y encriptadas.<br>
+                📄 Recibirás un comprobante de donación para uso fiscal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ¿QUÉ LOGRAMOS CON TU DONACIÓN? -->
+        <div style="margin-top: 3rem;">
+          <h3 style="text-align: center; color: var(--verde-bosque); margin-bottom: 2rem;">
+            ¿Qué logramos con tu donación?
+          </h3>
+          
+          <div class="grid grid-3">
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌱</div>
+              <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">$500</h4>
+              <p style="font-size: 0.95rem;">1 árbol nativo plantado y cuidado durante su primer año</p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌳</div>
+              <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">$5,000</h4>
+              <p style="font-size: 0.95rem;">10 árboles nativos + herramientas para su mantenimiento</p>
+            </div>
+
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌲</div>
+              <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">$50,000</h4>
+              <p style="font-size: 0.95rem;">100 árboles nativos + restauración completa de 1 hectárea</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA DE IMPACTO -->
+  <section class="section" id="calculadora">
+    <div class="container">
+      <h2 class="section-title">Calculá Tu Impacto</h2>
+      <p class="section-subtitle">
+        Descubrí qué podemos lograr juntos con tu aporte
+      </p>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-content">
+            <form id="impact-calculator-form">
+              <div class="form-group">
+                <label class="form-label" style="font-size: 1.1rem;">
+                  Ingresá el monto que querés donar (en pesos argentinos)
+                </label>
+                <input type="number" 
+                       id="donation-amount" 
+                       class="form-input" 
+                       placeholder="Ej: 5000" 
+                       min="100" 
+                       step="100"
+                       style="font-size: 1.3rem; text-align: center;" 
+                       required>
+              </div>
+
+              <button type="submit" class="btn btn-secondary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">
+                Calcular Impacto
+              </button>
+            </form>
+
+            <div id="impact-result" style="margin-top: 2rem; display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTARIADO -->
+  <section class="section" id="voluntariado" style="background: var(--blanco-hueso);">
+    <div class="container">
+      <h2 class="section-title">Voluntariado</h2>
+      <p class="section-subtitle">
+        Sumate a nuestra comunidad de guardianes del verde urbano
+      </p>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-content">
+            <h3 style="color: var(--verde-bosque); margin-bottom: 1.5rem;">
+              ¿Qué hacen nuestros voluntarios?
+            </h3>
+
+            <div class="grid grid-2" style="margin-bottom: 2.5rem;">
+              <div style="display: flex; gap: 1rem; align-items: start;">
+                <span style="font-size: 2rem;">🌱</span>
+                <div>
+                  <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">Plantación</h4>
+                  <p>Participá en jornadas de plantación de árboles y plantas nativas.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: start;">
+                <span style="font-size: 2rem;">💧</span>
+                <div>
+                  <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">Mantenimiento</h4>
+                  <p>Ayudá con el riego y cuidado de los árboles jóvenes.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: start;">
+                <span style="font-size: 2rem;">📚</span>
+                <div>
+                  <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">Educación</h4>
+                  <p>Participá de talleres educativos en escuelas y espacios públicos.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: start;">
+                <span style="font-size: 2rem;">📸</span>
+                <div>
+                  <h4 style="color: var(--verde-bosque); margin-bottom: 0.5rem;">Difusión</h4>
+                  <p>Ayudá con fotografía, redes sociales y comunicación.</p>
+                </div>
+              </div>
+            </div>
+
+            <form id="volunteer-form">
+              <h3 style="color: var(--verde-bosque); margin-bottom: 1.5rem;">
+                Inscribite como voluntario
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label">Nombre completo *</label>
+                <input type="text" class="form-input" placeholder="Juan Pérez" required>
+              </div>
+
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label class="form-label">Email *</label>
+                  <input type="email" class="form-input" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Teléfono *</label>
+                  <input type="tel" class="form-input" placeholder="+54 9 11 1234-5678" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">¿En qué actividades te gustaría participar? *</label>
+                <select class="form-select" required>
+                  <option value="">Seleccionar...</option>
+                  <option value="plantacion">Plantación de árboles</option>
+                  <option value="mantenimiento">Mantenimiento y cuidado</option>
+                  <option value="educacion">Actividades educativas</option>
+                  <option value="difusion">Difusión y comunicación</option>
+                  <option value="todas">Todas las anteriores</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Disponibilidad horaria</label>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem;">
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="semana">
+                    <label for="semana">Entre semana</label>
+                  </div>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="fines">
+                    <label for="fines">Fines de semana</label>
+                  </div>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="flexible">
+                    <label for="flexible">Horario flexible</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">¿Tenés experiencia previa? (opcional)</label>
+                <textarea class="form-textarea" placeholder="Contanos sobre tu experiencia en voluntariado, jardinería, educación ambiental, etc."></textarea>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">Acepto recibir información sobre jornadas de voluntariado *</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 1rem;">
+                Enviar Inscripción
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- PRÓXIMAS JORNADAS -->
+        <div style="margin-top: 3rem;">
+          <h3 style="text-align: center; color: var(--verde-bosque); margin-bottom: 2rem;">
+            Próximas Jornadas de Voluntariado
+          </h3>
+        
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="card-content">
+                <span class="badge badge-primary">Plantación</span>
+                <h4 style="color: var(--verde-bosque); margin: 1rem 0;">
+                  Jornada en Parque Chacabuco
+                </h4>
+                <p style="margin-bottom: 1rem;">
+                  Plantación de 50 árboles nativos con la comunidad del barrio.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--marron-tierra);">
+                  <span>📅 Sábado 25 de Noviembre</span>
+                  <span>🕐 10:00 a 14:00 hs</span>
+                  <span>📍 Parque Chacabuco, CABA</span>
+                </div>
+                
+                <a href="#volunteer-form" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem; text-align: center; display: block;">
+                  Inscribirme
+                </a>
+              </div>
+            </div>
+        
+            <div class="card">
+              <div class="card-content">
+                <span class="badge badge-secondary">Taller</span>
+                <h4 style="color: var(--verde-bosque); margin: 1rem 0;">
+                  Taller de Flora Nativa
+                </h4>
+                <p style="margin-bottom: 1rem;">
+                  Aprendé sobre especies nativas argentinas y su importancia ecológica.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--marron-tierra);">
+                  <span>📅 Domingo 3 de Diciembre</span>
+                  <span>🕐 15:00 a 18:00 hs</span>
+                  <span>📍 Reserva Ecológica Costanera Sur</span>
+                </div>
+        
+                <a href="#volunteer-form" class="btn btn-secondary" style="width: 100%; margin-top: 1.5rem; text-align: center; display: block;">
+                  Inscribirme
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIOS ADICIONALES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Otras Formas de Colaborar</h2>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🏢</div>
+            <h3 class="card-title">Empresas</h3>
+            <p class="card-description">
+              ¿Tu empresa quiere ser parte? Conocé nuestros programas de RSE y 
+              voluntariado corporativo.
+            </p>
+            <a href="contacto.html" class="btn btn-outline" style="margin-top: 1rem;">Contactar</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🏫</div>
+            <h3 class="card-title">Escuelas</h3>
+            <p class="card-description">
+              Organizamos talleres educativos y actividades prácticas para 
+              estudiantes de todos los niveles.
+            </p>
+            <a href="contacto.html" class="btn btn-outline" style="margin-top: 1rem;">Contactar</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content" style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎁</div>
+            <h3 class="card-title">Donaciones en Especie</h3>
+            <p class="card-description">
+              ¿Tenés herramientas, tierra o materiales? También aceptamos 
+              donaciones de insumos.
+            </p>
+            <a href="contacto.html" class="btn btn-outline" style="margin-top: 1rem;">Contactar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Raíces Nativas Argentina</h3>
+        <p>Restaurando el equilibrio, un árbol a la vez.</p>
+        <p>Organización sin fines de lucro dedicada a la reforestación urbana y conservación de flora nativa.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+          <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+          <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-icon" aria-label="YouTube">📺</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <a href="index.html">Home</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="involucrate.html">Involúcrate</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>📧 contacto@raicesnativas.org</p>
+        <p>📞 +54 9 11 2345-6789</p>
+        <p>📍 Av. Corrientes 1234, CABA<br>Buenos Aires, Argentina</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Recibí novedades sobre nuestros proyectos y eventos.</p>
+        <form style="margin-top: 1rem;">
+          <input type="email" placeholder="Tu email" class="form-input" style="margin-bottom: 0.8rem;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Raíces Nativas Argentina. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

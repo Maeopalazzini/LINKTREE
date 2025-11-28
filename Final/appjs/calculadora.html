@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Impacto - Raíces Nativas</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====================================
+       VARIABLES Y ESTILOS BASE
+       ==================================== */
+    :root {
+      --verde-bosque: #2E8B57;
+      --marron-tierra: #8D6E63;
+      --blanco-hueso: #F9F9F9;
+      --gris-pizarra: #37474F;
+      --blanco: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--gris-pizarra);
+      background-color: var(--blanco-hueso);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    /* ====================================
+       COMPONENTES DE LA CALCULADORA
+       ==================================== */
+    .container {
+      width: 100%;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--verde-bosque);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--marron-tierra);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-content {
+      padding: 2.5rem;
+    }
+
+    /* Formulario */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--gris-pizarra);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1.3rem;
+      text-align: center;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--verde-bosque);
+    }
+
+    /* Botón */
+    .btn {
+      display: inline-block;
+      padding: 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--verde-bosque) 0%, #1a6b42 100%);
+      color: var(--blanco);
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(46, 139, 87, 0.5);
+    }
+
+    /* Resultados (Generados por JS) */
+    .impact-results {
+      animation: fadeIn 0.5s ease;
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #eee;
+      padding-top: 2rem;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 1rem;
+      background: var(--blanco-hueso);
+      border-radius: 15px;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 0.3rem;
+      color: var(--verde-bosque);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--gris-pizarra);
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section" id="calculadora">
+    <div class="container">
+      <h2 class="section-title">Calculá Tu Impacto</h2>
+      <p class="section-subtitle">
+        Descubrí qué podemos lograr juntos con tu aporte
+      </p>
+
+      <div class="card">
+        <div class="card-content">
+          <form id="impact-calculator-form">
+            <div class="form-group">
+              <label class="form-label" for="donation-amount">
+                Ingresá el monto que querés donar (en pesos argentinos)
+              </label>
+              <input type="number" 
+                     id="donation-amount" 
+                     class="form-input" 
+                     placeholder="Ej: 5000" 
+                     min="100" 
+                     step="100"
+                     required>
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              Calcular Impacto
+            </button>
+          </form>
+
+          <div id="impact-result" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="calculadora.js"></script>
+
+</body>
+</html>
